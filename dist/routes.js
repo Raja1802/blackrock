@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const transactionsController_1 = require("./controllers/transactionsController");
+const router = (0, express_1.Router)();
+router.post('/transactions:parse', transactionsController_1.parseTransactions);
+router.post('/transactions:validator', transactionsController_1.validate);
+router.post('/transactions:filter', transactionsController_1.filterTransactions);
+router.post('/returns:nps', transactionsController_1.npsReturns);
+router.post('/returns:index', transactionsController_1.indexReturns);
+router.get('/performance', transactionsController_1.getPerformance);
+exports.default = router;
